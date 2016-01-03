@@ -7,10 +7,18 @@ $primary-text-color:   #212121;
 $secondary-text-color: #727272;
 $divider-color:        #B6B6B6;
 
+*{
+	box-sizing: border-box;
+}
+
 body{
 	margin:  0;
 	color: $primary-text-color;
 	-webkit-font-smoothing: antialliased;
+}
+
+a{
+	text-decoration: none;
 }
 
 .app-wrap{
@@ -24,6 +32,21 @@ body{
 	height: 80px;
 	border-bottom: 2px solid #fff59d;
 	flex-shrink: 0;
+	
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	a{
+		color: $primary-color-text;
+		&:first-child{
+			padding-left: 10px;
+		}
+	}
+
+	& > *{
+
+		flex-grow: 1;
+	}
 }
 
 .content{
@@ -39,4 +62,25 @@ body{
 	height: 80px;
 	border-top: 2px solid #e6e6e6;
 	flex-shrink: 0;
+
+	display: flex;
+	align-items: center;
+	a{
+		border-left: 2px solid rgba(0, 0, 0, .1);
+		flex-grow: 1;
+		color: rgba(0, 0, 0, 0.5);
+		padding: 15px;
+		text-align: center;
+		&:first-child{
+			border-left: 0;
+		}
+	}
+
+	i{
+		display: block;
+		font-size: 25px;
+		color: white;
+		text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.1);
+		padding-bottom: 10px;
+	}
 }
