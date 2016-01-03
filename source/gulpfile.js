@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const prefix = require('gulp-autoprefixer');
 const wrap = require('gulp-wrap');
+const browserSync = require('browser-sync');
 
 function handleError(err){
 	console.log(err.toString());
@@ -13,6 +14,14 @@ gulp.task('sass', () => {
 		.pipe(sass()).on('error', handleError)
 		.pipe(prefix())
 		.pipe(gulp.dest('../styles'));
+});
+
+gulp.task('browser-sync', () => {
+	browserSync({
+		server: {
+			baseDir: '..'
+		}
+	});
 });
 
 // gulp.task('cp', ()=>{
